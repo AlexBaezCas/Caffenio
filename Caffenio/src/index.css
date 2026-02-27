@@ -1,0 +1,351 @@
+/* ============================================ */
+/* src/index.css - TODOS LOS ESTILOS EN UNO */
+/* ============================================ */
+
+/* ===== FUENTES ===== */
+@import url('https://fonts.cdnfonts.com/css/gilroy');
+
+/* ===== RESET GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Gilroy', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ============================================ */
+/* ===== HOME (PANTALLA 1 - DESINFECCIÓN) ===== */
+/* ============================================ */
+
+.home-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #BD0A1A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.home-content {
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.home-container .main-title {
+  font-size: 150px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin: 0;
+  line-height: 1;
+}
+
+.home-container .subtitle {
+  font-size: 50px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.home-container .highlight-text {
+  font-size: 60px;
+  margin: 20px 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hand-image {
+  width: 250px;
+  height: auto;
+  margin: 30px 0;
+}
+
+.note-text {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.start-button {
+  background-color: #FFFFFF;
+  color: #BD0A1A;
+  border: none;
+  padding: 25px 60px;
+  font-size: 28px;
+  font-weight: 700;
+  border-radius: 15px;
+  cursor: pointer;
+  min-width: 350px;
+  transition: transform 0.1s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.start-button:active {
+  transform: scale(0.95);
+}
+
+/* ============================================ */
+/* ===== WELCOME (PANTALLA 2 - BLANCO CON TEXTOS NEGROS) ===== */
+/* ============================================ */
+
+.welcome-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #FFFFFF;  /* FONDO BLANCO */
+  display: flex;
+  flex-direction: column;
+  position: relative;  /* Para posicionar los botones */
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Título principal - ROJO (como en la imagen) */
+.welcome-main-title {
+  font-family: 'Gilroy-Black', sans-serif;
+  font-size: 70px;
+  font-weight: 900;
+  color: #BD0A1A;  /* TEXTO ROJO */
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+/* Subtítulo - ROJO */
+.welcome-subtitle {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: #BD0A1A;  /* TEXTO ROJO */
+  margin: 10px 0 20px 0;
+}
+
+/* Línea decorativa (guión) - ROJO */
+.welcome-decorative-line {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.welcome-dash {
+  font-family: 'Gilroy-Black', sans-serif;
+  font-size: 60px;
+  color: #BD0A1A;  /* ROJO */
+  line-height: 0.5;
+  display: inline-block;
+}
+
+/* Texto "¡Te reconocí!" - ROJO */
+.welcome-recognition-text {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #BD0A1A;  /* ROJO */
+  margin: 5px 0 40px 0;
+}
+
+/* Contenedor del mono */
+.welcome-monkey-container {
+  width: 100%;
+  margin: 20px 0 30px 0;
+}
+
+.welcome-monkey-image {
+  max-width: 336px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Contenedor info vehículo - TEXTO NEGRO */
+.welcome-vehicle-info {
+  margin: 20px 0;
+}
+
+/* Texto pick-up - NEGRO */
+.welcome-pickup-text {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;  /* TEXTO NEGRO */
+  margin-bottom: 10px;
+}
+
+/* Texto placas - NEGRO */
+.welcome-plates-text {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;  /* TEXTO NEGRO */
+}
+
+/* CONTENEDOR DE BOTONES - ESQUINA INFERIOR DERECHA */
+.welcome-actions {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+/* Botones - ESTILO CUADRADO */
+.welcome-button {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  padding: 15px 30px;
+  border: 2px solid #000000;  /* BORDE NEGRO */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Botón "¡Hola! Soy yo" - FONDO BLANCO, TEXTO NEGRO */
+.welcome-button-primary {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* Botón "No soy yo" - FONDO BLANCO, TEXTO NEGRO */
+.welcome-button-secondary {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* Hover effect */
+.welcome-button:hover {
+  background-color: #BD0A1A;
+  color: #FFFFFF;
+  border-color: #BD0A1A;
+}
+
+/* ============================================ */
+/* ===== MENU (PANTALLA 3 - EN CONSTRUCCIÓN) ===== */
+/* ============================================ */
+
+.menu-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #BD0A1A;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  text-align: center;
+}
+
+/* ============================================ */
+/* ===== RESPONSIVE ===== */
+/* ============================================ */
+
+@media (max-width: 1024px) {
+  .welcome-main-title {
+    font-size: 50px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 36px;
+  }
+  
+  .welcome-recognition-text {
+    font-size: 32px;
+  }
+  
+  .welcome-pickup-text,
+  .welcome-plates-text {
+    font-size: 24px;
+  }
+  
+  .welcome-button {
+    font-size: 30px;
+    padding: 12px 25px;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-main-title {
+    font-size: 40px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 30px;
+  }
+  
+  .welcome-dash {
+    font-size: 40px;
+  }
+  
+  .welcome-recognition-text {
+    font-size: 28px;
+  }
+  
+  .welcome-pickup-text,
+  .welcome-plates-text {
+    font-size: 20px;
+  }
+  
+  .welcome-button {
+    font-size: 24px;
+    padding: 10px 20px;
+    min-width: 150px;
+  }
+  
+  .welcome-actions {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-actions {
+    position: static;
+    margin-top: 40px;
+    justify-content: center;
+  }
+  
+  .welcome-container {
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  
+  .welcome-main-title {
+    font-size: 32px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 24px;
+  }
+  
+  .welcome-dash {
+    font-size: 32px;
+  }
+  
+  .welcome-recognition-text {
+    font-size: 22px;
+  }
+  
+  .welcome-pickup-text,
+  .welcome-plates-text {
+    font-size: 18px;
+  }
+  
+  .welcome-button {
+    font-size: 20px;
+    padding: 8px 16px;
+    min-width: 130px;
+  }
+}
