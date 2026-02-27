@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6b4f3c 0%, #8b6b4f 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #4a2c1a;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: #c49a6c;
+}
+
+/* ============================================ */
+/* ===== ESTILOS PARA EL CONTENEDOR DE LA IMAGEN ===== */
+/* ===== PERSONALIZA AQUÍ TUS IMÁGENES ===== */
+/* ============================================ */
+.option-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #c49a6c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    /* Color de fondo mientras no hay imagen */
+    background-color: #d4b8a0;
+    /* Placeholder visual con emoji de imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Placeholder con emoji */
+.option-image::before {
+    content: "🖼️";
+    font-size: 3rem;
+    opacity: 0.5;
+    color: #8b5e3c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Cuando hay una imagen, ocultamos el placeholder */
+.option-image[style*="url"]::before {
+    display: none;
+}
+
+.option-card:hover .option-image {
+    transform: scale(1.05);
+    border-color: #8b5e3c;
+}
+
+.option-label {
+    font-size: 1.5rem;
+    color: #4a2c1a;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.option-description {
+    color: #6b4f3c;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.coffee-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.coffee-icon {
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .options-container {
+        gap: 20px;
+    }
+
+    .option-card {
+        min-width: 250px;
+    }
+    
+    .option-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* ============================================ */
+/* INSTRUCCIONES PARA PONER TUS IMÁGENES:      */
+/* ============================================ */
+/*
+  MÉTODO 1: En el JSX (recomendado)
+  ---------------------------------
+  Busca en welcome2.jsx las líneas con:
+  style={{ backgroundImage: 'url()' }}
+  
+  Y pon la URL entre los paréntesis:
+  style={{ backgroundImage: 'url("/ruta/de/tu/imagen.jpg")' }}
+  
+  EJEMPLOS:
+  style={{ backgroundImage: 'url("/images/login-icon.png")' }}
+  style={{ backgroundImage: 'url("https://ejemplo.com/imagen.jpg")' }}
+  style={{ backgroundImage: 'url("../assets/guest-photo.webp")' }}
+
+
+  MÉTODO 2: En el CSS
+  -------------------
+  Si prefieres usar CSS, puedes añadir estas reglas:
+  
+  .option-card:first-child .option-image {
+      background-image: url('/ruta/de/tu/imagen1.jpg');
+  }
+  
+  .option-card:last-child .option-image {
+      background-image: url('/ruta/de/tu/imagen2.jpg');
+  }
+*/
+

@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.qr-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a3b4e 0%, #2c5a73 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.qr-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.qr-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.qr-scanner-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.qr-frame {
+    background: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+/* ============================================ */
+/* ===== ESTILOS PARA LA IMAGEN DEL QR ======= */
+/* ============================================ */
+.qr-image-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #e8f0fe;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed #2c5a73;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Clase para cuando pongas una imagen real */
+.qr-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.qr-placeholder-icon {
+    font-size: 5rem;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.qr-placeholder-text {
+    color: #2c5a73;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Animación del escáner (efecto de línea que se mueve) */
+.qr-scanner-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #4ecdc4, transparent);
+    animation: scan 2s linear infinite;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+@keyframes scan {
+    0% {
+        top: 10%;
+    }
+    50% {
+        top: 90%;
+    }
+    100% {
+        top: 10%;
+    }
+}
+
+.qr-steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #ffd93d;
+    color: #2c5a73;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
+}
+
+.step-text {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.qr-back-button {
+    background: white;
+    color: #2c5a73;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    border: 2px solid transparent;
+}
+
+.qr-back-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: #2c5a73;
+    color: white;
+    border-color: white;
+}
+
+.back-arrow {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .qr-title {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+
+    .qr-steps {
+        gap: 20px;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
+    }
+
+    .step-text {
+        font-size: 1rem;
+    }
+
+    .qr-back-button {
+        padding: 12px 40px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .qr-steps {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .step-item {
+        flex-direction: row;
+        width: 200px;
+    }
+
+    .qr-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================ */
+/* INSTRUCCIONES PARA PONER TU IMAGEN QR:      */
+/* ============================================ */
+/*
+  OPCIÓN 1: Usando img tag (recomendado)
+  --------------------------------------
+  En qr-scanner.jsx, reemplaza:
+  
+  <div className="qr-image-placeholder">
+    <span className="qr-placeholder-icon">📷</span>
+    <p className="qr-placeholder-text">Vista del escáner QR</p>
+  </div>
+  
+  Con:
+  
+  <img 
+    src="/ruta/de/tu/imagen-qr.jpg" 
+    alt="Escáner QR" 
+    className="qr-image" 
+  />
+
+  OPCIÓN 2: Usando background-image
+  ---------------------------------
+  <div 
+    className="qr-image" 
+    style={{ backgroundImage: 'url("/ruta/de/tu/imagen-qr.jpg")' }}
+  ></div>
+
+  EJEMPLOS DE RUTAS:
+  ------------------
+  <img src="/images/qr-scanner.png" ... />
+  <img src="/assets/codigo-qr.jpg" ... />
+  <img src="https://ejemplo.com/qr-scanner.svg" ... />
+*/
