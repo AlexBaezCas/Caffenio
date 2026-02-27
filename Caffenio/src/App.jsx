@@ -1,8 +1,7 @@
-// src/App.jsx
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import Welcome from "./pages/Welcome"
-import Menu from "./pages/Menu"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Welcome from "./pages/Welcome";
+import Menu from "./pages/Menu";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
         <Route path="/menu" element={<Menu />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

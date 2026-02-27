@@ -1,8 +1,9 @@
-// src/pages/Home.jsx
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import "../styles/home.css";
+import hand from "../assets/hand.png";
 
 function Home() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="home-container">
@@ -12,15 +13,14 @@ function Home() {
         <h3 className="highlight-text">
           ANTES Y DESPUÉS<br />DE USAR LA PANTALLA
         </h3>
-        <img 
-          src="/assets/hand.png" 
-          alt="Desinfección" 
-          className="hand-image"
-        />
+
+        <img src={hand} alt="Desinfección" className="hand-image" />
+
         <p className="note-text">
           *LA PANTALLA SE DESINFECTA<br />CADA 15 MINUTOS
         </p>
-        <button 
+
+        <button
           className="start-button"
           onClick={() => navigate("/welcome")}
         >
@@ -28,7 +28,7 @@ function Home() {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

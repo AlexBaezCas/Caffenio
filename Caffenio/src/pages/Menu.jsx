@@ -1,16 +1,11 @@
-// Componente temporal de menú
-function Menu() {
-  return (
-    <div style={{ 
-      height: "100vh", 
-      display: "flex", 
-      justifyContent: "center", 
-      alignItems: "center",
-      fontSize: "40px"
-    }}>
+import "../styles/menu.css";
+
+function Menu(){
+  return(
+    <div className="menu-container">
       MENÚ EN CONSTRUCCIÓN
     </div>
-  )
+  );
 }
 
-export default Menu
+export default Menu;
